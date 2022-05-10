@@ -19,7 +19,7 @@ public class TeleportController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        col.gameObject.transform.position = new Vector3(location.transform.position.x, col.gameObject.transform.position.y,  col.gameObject.transform.position.z);
+        col.gameObject.transform.position = new Vector3(location.transform.position.x - col.gameObject.transform.localScale.x/2, col.gameObject.transform.position.y,  col.gameObject.transform.position.z);
         if(col.name == "Player")
         {
             col.gameObject.GetComponent<PlayerController>().newDay();
